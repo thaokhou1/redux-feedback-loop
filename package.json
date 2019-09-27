@@ -6,9 +6,11 @@
   "dependencies": {
     "axios": "^0.17.1",
     "pg": "^7.4.1",
-    "react": "^16.8.6",
+    "react": "^16.10.0",
     "react-dom": "^16.8.6",
-    "react-scripts": "^3.0.1"
+    "react-redux": "^7.1.1",
+    "react-scripts": "^3.0.1",
+    "redux": "^4.0.4"
   },
   "devDependencies": {
     "nodemon": "^1.18.5"
