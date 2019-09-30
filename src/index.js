@@ -2,35 +2,35 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App/App';
-import registerServiceWorker from './registerServiceWorker';
+
 
 // Redux
-import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { createStore, combineReducers} from 'redux';
 import { Provider } from 'react-redux';
 
 
 const feedback = 
     {
-        newFeeling: '',
-        newUnderstanding: '',
-        newSupport: '',
-        newComments: ''
+        feeling: '',
+        understanding: '',
+        support: '',
+        comments: ''
     }
 
 const nextReducer = (state = feedback, action) => {
   //add feedback to store
   switch (action.type) {
     case 'ADD_FEELING': 
-        state.newFeeling = action.payload
+        state.feeling = action.payload
         return state;
     case 'ADD_UNDERSTANDING':
-        state.newUnderstanding = action.payload
+        state.understanding = action.payload
         return state;
     case 'ADD_SUPPORT':
-        state.newSupport = action.payload;
+        state.support = action.payload;
         return state;
     case 'ADD_COMMENT':
-        state.newComment = action.payload;
+        state.comments = action.payload;
         return state;
     default:
         return state;
