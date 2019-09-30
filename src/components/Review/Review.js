@@ -8,6 +8,8 @@ class Review extends Component {
   handlePost = () => {
     axios.post('/api/feedback', this.props.reduxState.nextReducer, this.props.reduxState.feedback)
       .then((response) => {
+        //go to Completed.js
+        this.props.history.push("/completed");
       })
       .catch((error) => {
         console.log('ERROR IN POST', error);
@@ -16,8 +18,7 @@ class Review extends Component {
 
   handleClick = () => {
     this.handlePost();
-    //go to Completed.js
-    this.props.history.push("/completed");
+
   }
   render() {
     return (
