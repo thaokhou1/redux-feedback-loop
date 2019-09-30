@@ -5,12 +5,12 @@ import {connect} from 'react-redux';
 
 class Feeling extends Component {
     state = {
-        newFeeling: []
+        feeling: []
       }
     
       handleChange = (event) => {
         this.setState({
-          newFeeling: event.target.value
+          feeling: event.target.value
         })
         console.log(event.target.value);
         
@@ -19,7 +19,7 @@ class Feeling extends Component {
 handleClick = () => {
     this.props.dispatch({
         type: 'ADD_FEELING',
-        payload: this.state.newFeeling
+        payload: this.state.feeling
     })
     //go to Understanding.js
     this.props.history.push("/understanding");

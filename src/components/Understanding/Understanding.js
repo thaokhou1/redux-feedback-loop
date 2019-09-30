@@ -4,12 +4,12 @@ import {connect} from 'react-redux';
 
 class Understanding extends Component {
     state = {
-        newUnderstanding: []
+        understanding: []
       }
     
       handleChange = (event, keyName) => {
         this.setState({
-            newUnderstanding: event.target.value
+            understanding: event.target.value
           })
         console.log(event.target.value);
         
@@ -18,7 +18,7 @@ class Understanding extends Component {
     handleClick = () => {
         this.props.dispatch({
             type: 'ADD_UNDERSTANDING',
-            payload: this.state.newUnderstanding
+            payload: this.state.understanding
         })
         //go to Support.js
         this.props.history.push("/support");

@@ -3,12 +3,12 @@ import {connect} from 'react-redux';
 
 class Comment extends Component {
     state = {
-        newComment: []
+        comments: []
       }
     
       handleChange = (event) => {
         this.setState({
-            newComment: event.target.value
+            comments: event.target.value
           })
         console.log(event.target.value);
         
@@ -17,7 +17,7 @@ class Comment extends Component {
     handleClick = () => {
         this.props.dispatch({
             type: 'ADD_COMMENT',
-            payload: this.state.newComment
+            payload: this.state.comments
         })
         //go to Review.js
         this.props.history.push("/review");

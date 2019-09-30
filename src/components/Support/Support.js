@@ -3,12 +3,12 @@ import {connect} from 'react-redux';
 
 class Support extends Component {
     state = {
-        newSupport: []
+        support: []
       }
     
       handleChange = (event) => {
        this.setState({
-            newSupport: event.target.value
+            support: event.target.value
           })
         console.log(event.target.value);
         
@@ -17,7 +17,7 @@ class Support extends Component {
     handleClick = () => {
         this.props.dispatch({
             type: 'ADD_SUPPORT',
-            payload: this.state.newSupport
+            payload: this.state.support
         })
         //go to Comment.js
         this.props.history.push("/comment");
