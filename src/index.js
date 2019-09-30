@@ -11,7 +11,7 @@ import { Provider } from 'react-redux';
 
 const nextReducer = (state = {}, action) => {
     // Add to the order in the store
-    if (action.type === 'SET_ORDER') {
+    if (action.type === 'SET_REVIEW') {
       return {...state, ...action.payload};
     }
     return state;

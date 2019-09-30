@@ -5,6 +5,24 @@ import axios from 'axios';
 import {connect} from 'react-redux';
 
 class Understanding extends Component {
+    state = {
+        newUnderstanding: {
+          understanding: '',
+         
+        }
+      }
+    
+      handleChange = (event, keyName) => {
+        this.setState({
+          newUnderstanding: {
+            ...this.state.newOrder,
+            [keyName]: event.target.value
+          },
+        });
+        console.log(event.target.value);
+        
+      }
+
     handleClick = () => {
         //go to Support.js
         this.props.history.push("/support");
@@ -19,7 +37,7 @@ class Understanding extends Component {
         <br/>
         <h1>How well are you understanding the content?</h1>
         <h5>Understanding?</h5>
-        <input placeholder="rating"></input>
+        <input placeholder="rating" onChange={(event) => this.handleChange(event, 'understanding')}></input>
         <button onClick={this.handleClick}>NEXT</button>
       </div>
     );

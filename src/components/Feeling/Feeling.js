@@ -6,6 +6,23 @@ import {connect} from 'react-redux';
 
 
 class Feeling extends Component {
+    state = {
+        newFeeling: {
+          feeling: '',
+         
+        }
+      }
+    
+      handleChange = (event, keyName) => {
+        this.setState({
+          newOrder: {
+            ...this.state.newOrder,
+            [keyName]: event.target.value
+          },
+        });
+        console.log(event.target.value);
+        
+      }
 
 handleClick = () => {
     //go to Understanding.js
@@ -21,7 +38,7 @@ handleClick = () => {
         <br/>
         <h1>How are you feeling today?</h1>
         <h5>Feeling?</h5>
-        <input placeholder="rating"></input>
+        <input placeholder="rating" onChange={(event) => this.handleChange(event, 'feeling')}></input>
         <button onClick={this.handleClick}>NEXT</button>
       </div>
     );

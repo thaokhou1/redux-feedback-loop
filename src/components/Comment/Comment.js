@@ -5,6 +5,24 @@ import axios from 'axios';
 import {connect} from 'react-redux';
 
 class Comment extends Component {
+    state = {
+        newComment: {
+          comment: '',
+         
+        }
+      }
+    
+      handleChange = (event, keyName) => {
+        this.setState({
+          newOrder: {
+            ...this.state.newOrder,
+            [keyName]: event.target.value
+          },
+        });
+        console.log(event.target.value);
+        
+      }
+
     handleClick = () => {
         //go to Review.js
         this.props.history.push("/review");
@@ -19,7 +37,7 @@ class Comment extends Component {
         <br/>
         <h1>Any comments you want to leave?</h1>
         <h5>Comments</h5>
-        <input placeholder="comments here"></input>
+        <input placeholder="comments here" onChange={(event) => this.handleChange(event, 'comment')}></input>
         <button onClick={this.handleClick}>NEXT</button>
       </div>
     );
