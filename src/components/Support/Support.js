@@ -5,6 +5,10 @@ import axios from 'axios';
 import {connect} from 'react-redux';
 
 class Support extends Component {
+    handleClick = () => {
+        //go to Understanding.js
+        this.props.history.push("/comment");
+    }
   render() {
     return (
       <div className="App">
@@ -16,7 +20,7 @@ class Support extends Component {
         <h1>How well are you being supported?</h1>
         <h5>Support?</h5>
         <input placeholder="rating"></input>
-        <button>NEXT</button>
+        <button onClick={this.handleClick}>NEXT</button>
       </div>
     );
   }

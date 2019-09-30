@@ -8,18 +8,18 @@ import registerServiceWorker from './registerServiceWorker';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 
-const reducer = (state = {}, action) => {
-  console.log('hello ');
-  
-  }
+
+const nextReducer = (state = {}, action) => {
+    // Add to the order in the store
+    if (action.type === 'SET_ORDER') {
+      return {...state, ...action.payload};
+    }
+    return state;
+}
 
 const reduxStore = createStore(
     // use combineReducers in case we add more later
-    combineReducers({
-      reducer
-    }),
-    // log reduxStore details to console
-    // applyMiddleware(logger)
+   nextReducer
   );
 
   
