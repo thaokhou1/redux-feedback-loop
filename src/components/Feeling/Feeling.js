@@ -35,7 +35,7 @@ handleClick = () => {
         <h1>How are you feeling today?</h1>
         <h5>Feeling?</h5>
         <h6>Rate 1-5. 1 being very stresssed and 5 being great!</h6>
-        <input placeholder="rating" onChange={(event) => this.handleChange(event)}></input>
+        <input  onChange={(event) => this.handleChange(event)}></input>
         <button onClick={this.handleClick}>NEXT</button>
       </div>
     );

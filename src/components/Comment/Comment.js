@@ -32,7 +32,7 @@ class Comment extends Component {
         <br/>
         <h1>Any comments you want to leave?</h1>
         <h5>Comments</h5>
-        <input placeholder="comments here" onChange={(event) => this.handleChange(event)}></input>
+        <input  onChange={(event) => this.handleChange(event)}></input>
         <button onClick={this.handleClick}>NEXT</button>
       </div>
     );

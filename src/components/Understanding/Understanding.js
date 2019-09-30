@@ -34,7 +34,7 @@ class Understanding extends Component {
         <h1>How well are you understanding the content?</h1>
         <h5>Understanding?</h5>
         <h6>Rate 1-5. 1 being I'm totally lost and 5 being I got this!</h6>
-        <input placeholder="rating" onChange={(event) => this.handleChange(event)}></input>
+        <input onChange={(event) => this.handleChange(event)}></input>
         <button onClick={this.handleClick}>NEXT</button>
       </div>
     );
