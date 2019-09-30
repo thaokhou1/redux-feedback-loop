@@ -1,30 +1,26 @@
-//first page
 
 import React, { Component } from 'react';
-import axios from 'axios';
 import {connect} from 'react-redux';
 
 
 class Feeling extends Component {
     state = {
-        newFeeling: {
-          feeling: '',
-         
-        }
+        newFeeling: []
       }
     
-      handleChange = (event, keyName) => {
+      handleChange = (event) => {
         this.setState({
-          newOrder: {
-            ...this.state.newOrder,
-            [keyName]: event.target.value
-          },
-        });
+          newFeeling: event.target.value
+        })
         console.log(event.target.value);
         
       }
 
 handleClick = () => {
+    this.props.dispatch({
+        type: 'ADD_FEELING',
+        payload: this.state.newFeeling
+    })
     //go to Understanding.js
     this.props.history.push("/understanding");
 }
@@ -38,7 +34,8 @@ handleClick = () => {
         <br/>
         <h1>How are you feeling today?</h1>
         <h5>Feeling?</h5>
-        <input placeholder="rating" onChange={(event) => this.handleChange(event, 'feeling')}></input>
+        <h6>Rate 1-5. 1 being very stresssed and 5 being great!</h6>
+        <input placeholder="rating" onChange={(event) => this.handleChange(event)}></input>
         <button onClick={this.handleClick}>NEXT</button>
       </div>
     );

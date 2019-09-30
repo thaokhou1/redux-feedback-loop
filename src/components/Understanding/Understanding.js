@@ -1,29 +1,25 @@
-//second page
 
 import React, { Component } from 'react';
-import axios from 'axios';
 import {connect} from 'react-redux';
 
 class Understanding extends Component {
     state = {
-        newUnderstanding: {
-          understanding: '',
-         
-        }
+        newUnderstanding: []
       }
     
       handleChange = (event, keyName) => {
         this.setState({
-          newUnderstanding: {
-            ...this.state.newOrder,
-            [keyName]: event.target.value
-          },
-        });
+            newUnderstanding: event.target.value
+          })
         console.log(event.target.value);
         
       }
 
     handleClick = () => {
+        this.props.dispatch({
+            type: 'ADD_UNDERSTANDING',
+            payload: this.state.newUnderstanding
+        })
         //go to Support.js
         this.props.history.push("/support");
     }
@@ -37,7 +33,8 @@ class Understanding extends Component {
         <br/>
         <h1>How well are you understanding the content?</h1>
         <h5>Understanding?</h5>
-        <input placeholder="rating" onChange={(event) => this.handleChange(event, 'understanding')}></input>
+        <h6>Rate 1-5. 1 being I'm totally lost and 5 being I got this!</h6>
+        <input placeholder="rating" onChange={(event) => this.handleChange(event)}></input>
         <button onClick={this.handleClick}>NEXT</button>
       </div>
     );
