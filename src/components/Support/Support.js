@@ -33,7 +33,7 @@ class Support extends Component {
         <h1>How well are you being supported?</h1>
         <h5>Support?</h5>
         <h6>Rate 1-5. 1 being I feel abandon and 5 being I feel supported!</h6>
-        <input onChange={(event) => this.handleChange(event)}></input>
+        <input type="Number"  onChange={(event) => this.handleChange(event)}></input>
         <button onClick={this.handleClick}>NEXT</button>
       </div>
     );

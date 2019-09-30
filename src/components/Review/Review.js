@@ -6,7 +6,7 @@ import {connect} from 'react-redux';
 class Review extends Component {
     //post to server
     handlePost = () => {
-        axios.post('/api/feedback', this.props.reduxState.nextReducer)
+        axios.post('/api/feedback', this.props.reduxState.nextReducer,this.props.reduxState.feedback)
         .then( (response) => {
         })
         .catch( (error) => {
