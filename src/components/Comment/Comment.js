@@ -6,7 +6,7 @@ import {connect} from 'react-redux';
 
 class Comment extends Component {
     handleClick = () => {
-        //go to Understanding.js
+        //go to Review.js
         this.props.history.push("/review");
     }
   render() {

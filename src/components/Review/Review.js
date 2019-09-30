@@ -3,20 +3,14 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import {connect} from 'react-redux';
-import { Redirect } from 'react-router-dom';
+
 
 class Review extends Component {
-    state = {
-        redirectHome : false,
-        customer: []
-      }
     handleClick = () => {
-        this.setState({redirectHome: true})
-      }
-  render() {
-    if (this.state.redirectHome) {
-        return <Redirect to="/" />
-      }
+        //go to Completed.js
+        this.props.history.push("/completed");
+    }
+    render(){
     return (
       <div className="App">
         <header>
@@ -29,7 +23,6 @@ class Review extends Component {
            <h4>Support:</h4>
            <h4>Comments:</h4>
        </div>
-        <input placeholder="comments here"></input>
         <button onClick={this.handleClick}>SUBMIT</button>
       </div>
     );
