@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 class Comment extends Component {
   state = {
-    comments: []
+    comments: ''
   }
 
   handleChange = (event) => {
@@ -13,13 +13,17 @@ class Comment extends Component {
   }
 
   handleClick = () => {
+    if (this.state.comments === ''){
+      alert('You must fill out the comments field.')
+  }
+  else {
     this.props.dispatch({
       type: 'ADD_COMMENT',
       payload: this.state.comments
     })
     //go to Review.js
     this.props.history.push("/review");
-  }
+  }}
   render() {
     return (
       <div className="App">

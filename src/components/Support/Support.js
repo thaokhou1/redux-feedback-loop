@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 class Support extends Component {
   state = {
-    support: []
+    support: ''
   }
 
   handleChange = (event) => {
@@ -13,13 +13,17 @@ class Support extends Component {
   }
 
   handleClick = () => {
+    if (this.state.support === ''){
+      alert('You must fill out the support field.')
+  }
+  else {
     this.props.dispatch({
       type: 'ADD_SUPPORT',
       payload: this.state.support
     })
     //go to Comment.js
     this.props.history.push("/comment");
-  }
+  }}
   render() {
     return (
       <div className="App">

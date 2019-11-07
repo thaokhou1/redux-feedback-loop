@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 class Feeling extends Component {
   state = {
-    feeling: []
+    feeling: ''
   }
 
   handleChange = (event) => {
@@ -15,6 +15,10 @@ class Feeling extends Component {
   }
 
   handleClick = () => {
+    if (this.state.feeling=== ''){
+      alert('You must fill out the feelings field.')
+  }
+  else {
     this.props.dispatch({
       type: 'ADD_FEELING',
       payload: this.state.feeling
@@ -22,6 +26,7 @@ class Feeling extends Component {
     //go to Understanding.js
     this.props.history.push("/understanding");
   }
+}
   render() {
     return (
       <div className="App">

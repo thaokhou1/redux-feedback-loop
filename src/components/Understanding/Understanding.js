@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 class Understanding extends Component {
   state = {
-    understanding: []
+    understanding: ''
   }
 
   handleChange = (event, keyName) => {
@@ -14,6 +14,10 @@ class Understanding extends Component {
   }
 
   handleClick = () => {
+    if (this.state.understanding === ''){
+      alert('You must fill out the understanding field.')
+  }
+  else {
     this.props.dispatch({
       type: 'ADD_UNDERSTANDING',
       payload: this.state.understanding
@@ -21,6 +25,7 @@ class Understanding extends Component {
     //go to Support.js
     this.props.history.push("/support");
   }
+}
   render() {
     return (
       <div className="App">
